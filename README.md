@@ -20,7 +20,7 @@ openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out s
 
 Don't add password as to be able to spare it when sending message
 ```sh
-openssl genrsa -des3 -out client.key 2048 
+openssl genrsa -out client.key 2048 
 openssl req -out client.csr -key client.key -new
 #Send the CSR to the CA, or sign it with your CA key:
 openssl x509 -req -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out client.crt -days 4000
